@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -23,7 +24,7 @@ body::before {
   width: 100%;
   height: 100%;
   background: url('../public/images/cross-pattern.svg') repeat;
-  opacity: 0.05;
+    opacity: 0.03;
   z-index: -1;
 }
 
@@ -34,7 +35,7 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
 
