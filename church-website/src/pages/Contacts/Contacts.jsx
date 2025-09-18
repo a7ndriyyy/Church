@@ -8,21 +8,21 @@ export default function Contacts() {
       name: "о. Андрій Петров",
       phone: "+380 50 123 4567",
       email: "priest@church.org",
-      photo: "/church-website/public/images/pasha.jpg",
+      photo: "/images/pasha.jpg",
     },
     {
       role: "Голова парафії",
       name: "Іван Іваненко",
       phone: "+380 67 890 1234",
       email: "head@church.org",
-      photo: "../../../public/images/pasha.jpg",
+      photo: "/images/pasha.jpg",
     },
     {
       role: "Голова братства",
       name: "Сергій Коваленко",
       phone: "+380 99 456 7890",
       email: "brotherhood@church.org",
-      photo: "../../../public/images/pasha.jpg",
+      photo: "/images/pasha.jpg",
     },
   ];
 

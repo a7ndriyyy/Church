@@ -1,0 +1,48 @@
+export const events = [
+  {
+    id: 1,
+    title: "Sunday Service",
+    image: "/images/eventsExemple.webp",
+    description: "Join us for our weekly Sunday worship service.",
+     date: "Every Sunday",
+    time: "10:00 AM - 12:00 PM",
+    location: "Main Church Hall",
+    organizer: "Father Andriy",
+    contact: "+380 50 123 4567",
+  },
+  {
+    id: 2,
+    title: "Youth Meeting",
+    image: "/images/eventsExemple.webp",
+    description: "Our youth group gathers every Friday evening.",
+    date: "Every Friday",
+    time: "18:00 - 20:00",
+    location: "Youth Room",
+    organizer: "Ivan Ivanenko",
+    contact: "+380 67 890 1234",
+  },
+  {
+    id: 3,
+    title: "Bible Study",
+    image: "/images/eventsExemple.webp",
+    description: "Dive deeper into the Word every Wednesday.",
+  },
+  {
+    id: 4,
+    title: "Community Outreach",
+    image: "/images/eventsExemple.webp",
+    description: "Serving our community with love and compassion.",
+  },
+  {
+    id: 5,
+    title: "Christmas Concert",
+    image: "/images/eventsExemple.webp",
+    description: "Celebrate the birth of Christ with music and joy.",
+  },
+  {
+    id: 6,
+    title: "Prayer Night",
+    image: "/images/eventsExemple.webp",
+    description: "Join us for a night of prayer and worship.",
+  },
+];

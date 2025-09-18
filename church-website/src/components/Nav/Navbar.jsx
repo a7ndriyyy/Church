@@ -8,7 +8,10 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <h1 className="logo">ÉGLISE UKRAINIENNE ORTHODOXE AUTOCÉPHALE</h1>
+        <div className="logo-title">
+        <img className="logo-cross " id="Logocross" height={70} width={60} src="/images/Logocross.png" alt="Church Logo"/>
+        <h1 className="logo">УKRAЇНСЬKA AВTOKEФAЛЬНA ПРAВOСЛAВНA ЦEРKВA</h1>
+        </div>
 
         {/* Desktop menu */}
         <ul className="nav-links">
