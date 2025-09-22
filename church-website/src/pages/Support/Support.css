@@ -1,179 +1,186 @@
 .support-page {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  color: #1f2937;
-  background: rgba(245, 247, 252, 0.05); /* легкий фон для контрасту */
-}
-
-/* Заголовок */
-.support-title {
-  font-size: 36px;
-  color: #ffffff;
-  font-weight: 700;
-  margin-bottom: 60px;
-  position: relative;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.support-title::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: #3b82f6;
-  margin: 12px auto 0;
-  border-radius: 2px;
-  transition: width 0.3s, background 0.3s;
-}
-
-.support-title:hover,
-.support-title:focus {
-  color: #3b82f6;
-  transform: scale(1.05);
-}
-
-.support-title:hover::after,
-.support-title:focus::after {
-  width: 140px;
-  background: #1e40af;
-}
-
-/* Контейнер карток - адаптивна решітка */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 50px;
-  margin-bottom: 80px;
-}
-
-/* 3D Картки */
-.support-card {
+  display: flex;
   width: 100%;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+.half-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+
+
+    border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.half-page:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.half-page h2 {
+  margin-bottom: 40px;
+  color: #efe9e9;
+}
+
+/* 3D Card Styles */
+.card-container {
+   perspective: 1000px;
+  margin-top: 20px;
+}
+
+.card-support {
+  width: 320px;
   height: 200px;
-  perspective: 1200px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.support-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card-inner {
+  border-radius: 20px;
   position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
   transform-style: preserve-3d;
-}
-
-.support-card:hover .card-inner,
-.support-card:focus-within .card-inner {
-  transform: rotateY(180deg);
+  transition: transform 0.8s ease;
   cursor: pointer;
 }
 
-/* Front & Back */
-.card-front,
-.card-back {
-  position: absolute;
+.card-support:hover {
+  transform: rotateY(35deg) rotateX(25deg);
+}
+
+.card-bg {
+  background: linear-gradient(135deg, #1a1a1a, #444);
   width: 100%;
   height: 100%;
   border-radius: 20px;
-  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 8px 25px rgba(0,0,0,0.25);
-  padding: 20px;
-  color: #fff;
+  justify-content: space-between;
+}
+
+.card-chip {
+  width: 50px;
+  height: 35px;
+  background: gold;
+  border-radius: 6px;
+}
+
+.card-logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1.2rem;
 }
 
-.card-front:hover,
-.card-back:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 12px 35px rgba(0,0,0,0.3);
-}
-
-.card-back {
-  transform: rotateY(180deg);
-  text-align: center;
-  font-weight: normal;
-  font-size: 14px;
-}
-
-/* Стилі по країнам */
-.church-card .card-front {
-  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-}
-
-.church-card .card-back {
-  background: #1e40af;
-}
-
-.ukraine-card .card-front {
-  background: linear-gradient(135deg, #0057b7, #ffd700);
-  color: #000;
-}
-
-.ukraine-card .card-back {
-  background: #ffd700;
-  color: #000;
-}
-
-/* Франція */
-.france-card .card-front {
-  background: linear-gradient(135deg, #0055A4, #EF4135); /* синьо-червоний градієнт */
-  color: #fff;
-}
-
-.france-card .card-back {
-  background: #2E2B2A; /* темно-сірий фон для back */
-}
-
-/* Іконки та текст */
-.card-icon {
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-
-.card-number {
+.card-iban {
+  font-weight: bold;
+  font-size: 0.9rem;
   letter-spacing: 2px;
-  font-size: 16px;
-  margin: 4px 0;
+  text-align: center;
+  margin-top: 40px;
 }
 
-.card-bank,
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .card-name {
-  font-size: 14px;
-  margin: 2px 0;
+  font-size: 0.85rem;
 }
 
-/* Примітки */
-.support-note {
-  font-size: 15px;
-  color: #fdfeff;
-  margin-top: 30px;
+.card-valid {
+  font-size: 0.75rem;
 }
 
-.support-note a {
-  color: #f5f7fc;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s, transform 0.3s;
+
+.card-title{
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #eceef3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.card-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6, #ffcc00);
+  border-radius: 2px;
+  transition: width 0.4s ease-in-out;
 }
 
-.support-note a:hover,
-.support-note a:focus {
-  text-decoration: underline;
-  color: #6186c2;
+/* Hover + Focus */
+.card-title:hover,
+.card-title:focus {
+  color: #3b82f6;
+  text-shadow: 0px 0px 12px rgba(59, 130, 246, 0.5);
   transform: scale(1.05);
+}
+
+.card-title:hover::after,
+.card-title:focus::after {
+  width: 100%;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+}
+.desc {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+.desc:hover,
+.desc:focus {
+  text-shadow: 0px 0px 12px rgba(59, 130, 246, 0.5);
+  transform: scale(1.05);
+}
+
+.support-footer {
+  flex-basis: 100%;
+  text-align: center;
+  margin: 40px 0 0;
+  font-size: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 20px;
+}
+
+.support-footer a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.support-footer a:hover {
+  text-decoration: underline;
 }

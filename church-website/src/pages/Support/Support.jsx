@@ -1,96 +1,66 @@
-import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
-import { FaChurch, FaFlag } from "react-icons/fa";
+import React from "react";
 import "./Support.css";
+import { Link } from "react-router-dom";
 
-export default function Support() {
-  const supports = [
-    {
-      type: "Церква",
-      icon: <FaChurch />,
-      cardTitle: "Пожертва на храм",
-      cardData: {
-        cardNumber: "1234 5678 9012 3456",
-        bank: "Універсальна Банк",
-        name: "Парафія Святої Трійці",
-      },
-      description: "Кошти підуть на розбудову храму та розвиток парафії.",
-      styleClass: "church-card",
-    },
-    {
-      type: "Волонтери",
-      icon: <FaFlag />,
-      cardTitle: "Допомога Україні",
-      cardData: {
-        cardNumber: "9876 5432 1098 7654",
-        bank: "Благодійний Фонд",
-        name: "Бригада Добровольців",
-      },
-      description: "Пожертви підуть на машини та допомогу бригаді, яка допомагає Україні.",
-      styleClass: "ukraine-card",
-    },
-  ];
-
-  const cardRefs = useRef([]);
-  const [visibleCards, setVisibleCards] = useState([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number(entry.target.dataset.index);
-            if (!visibleCards.includes(index)) {
-              setVisibleCards((prev) => [...prev, index]);
-            }
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    cardRefs.current.forEach((el) => {
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, [visibleCards]);
-
+const Support = () => {
   return (
     <div className="support-page">
-      <h2 className="support-title">Підтримати нас</h2>
-
-      <div className="cards-container">
-        {supports.map((item, index) => (
-          <div
-            className={`support-card ${item.styleClass} ${visibleCards.includes(index) ? "visible" : ""}`}
-            key={index}
-            ref={(el) => (cardRefs.current[index] = el)}
-            data-index={index}
-            style={{ transitionDelay: `${index * 0.3}s` }}
-          >
-            <div className="card-inner">
-              <div className="card-front">
-                <div className="card-icon">{item.icon}</div>
-                <h3>{item.cardTitle}</h3>
-                <p className="card-number">{item.cardData.cardNumber}</p>
-                <p className="card-bank">{item.cardData.bank}</p>
-                <p className="card-name">{item.cardData.name}</p>
+      <div className="half-page">
+        <h2 className="card-title">Church Reconstruction</h2>
+           <p className="desc">
+          Help rebuild our church so it remains a place of worship and community.
+        </p>
+        <div className="card-container">
+          <div className="card-support">
+            <div className="card-bg"></div>
+            <div className="card-content">
+              <div className="card-chip"></div>
+              <div className="card-logo">BANK</div>
+              <div className="card-iban">
+                FR76 3000 6000 0112 3456 7890 189
               </div>
-              <div className="card-back">
-                <p>{item.description}</p>
+              <div className="card-info">
+                <div className="card-name">CHURCH FUND</div>
+                <div className="card-valid">
+                  Valid Thru <span>12/27</span>
+                </div>
               </div>
             </div>
           </div>
-        ))}
+        </div>
       </div>
 
-      <div className="support-note">
-        <p>
-          Щоб знати точніше, куди йдуть ваші пожертви, ви можете зв'язатися з нашим священником: {" "}
-          <Link to="/contacts">Сторінка контактів</Link>
+      <div className="half-page">
+        <h2 className="card-title">Support UK Soldiers</h2>
+             <p className="desc">
+          Support our soldiers in the UK to provide safety and essential aid.
         </p>
+        <div className="card-container">
+          <div className="card-support">
+            <div className="card-bg"></div>
+            <div className="card-content">
+              <div className="card-chip"></div>
+              <div className="card-logo">BANK</div>
+              <div className="card-iban">
+                GB29 NWBK 6016 1331 9268 19
+              </div>
+              <div className="card-info">
+                <div className="card-name">UK SOLDIERS FUND</div>
+                <div className="card-valid">
+                  Valid Thru <span>11/26</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+       <div className="support-footer">
+        For more info, you can <Link to="/contacts">contact the priest</Link>.
       </div>
     </div>
   );
-}
+};
+
+export default Support;
