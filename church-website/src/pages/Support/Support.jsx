@@ -1,14 +1,20 @@
 import React from "react";
 import "./Support.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const Support = () => {
+
+const { t } = useTranslation();
+
   return (
     <div className="support-page">
       <div className="half-page">
-        <h2 className="card-title">Church Reconstruction</h2>
+        <h2 className="card-title">{t("Church Reconstruction")}</h2>
            <p className="desc">
-          Help rebuild our church so it remains a place of worship and community.
+          {t(
+            "Help rebuild our church so it remains a place of worship and community."
+          )}
         </p>
         <div className="card-container">
           <div className="card-support">
@@ -22,7 +28,7 @@ const Support = () => {
               <div className="card-info">
                 <div className="card-name">CHURCH FUND</div>
                 <div className="card-valid">
-                  Valid Thru <span>12/27</span>
+                  {t("Valid Thru")} <span>12/27</span>
                 </div>
               </div>
             </div>
@@ -31,9 +37,11 @@ const Support = () => {
       </div>
 
       <div className="half-page">
-        <h2 className="card-title">Support UK Soldiers</h2>
+        <h2 className="card-title">{t("Support UK Soldiers")}</h2>
              <p className="desc">
-          Support our soldiers in the UK to provide safety and essential aid.
+          {t(
+            "Support our soldiers in the UK to provide safety and essential aid."
+          )}
         </p>
         <div className="card-container">
           <div className="card-support">
@@ -47,7 +55,7 @@ const Support = () => {
               <div className="card-info">
                 <div className="card-name">UK SOLDIERS FUND</div>
                 <div className="card-valid">
-                  Valid Thru <span>11/26</span>
+                  {t("Valid Thru")} <span>11/26</span>
                 </div>
               </div>
             </div>
@@ -57,7 +65,7 @@ const Support = () => {
 
 
        <div className="support-footer">
-        For more info, you can <Link to="/contacts">contact the priest</Link>.
+        {t("For more info, you can")}{" "} <Link to="/contacts">{t("contact the priest")}</Link>.
       </div>
     </div>
   );

@@ -1,24 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 import "./Contacts.css";
+import { useTranslation } from 'react-i18next';
 
 export default function Contacts() {
+  const { t } = useTranslation();
   const contacts = [
     {
-      role: "Священник",
+      role: t('priest'),
       name: "о. Андрій Петров",
       phone: "+380 50 123 4567",
       email: "priest@church.org",
       photo: "/images/pasha.jpg",
     },
     {
-      role: "Голова парафії",
+      role: t('parishHead'),
       name: "Іван Іваненко",
       phone: "+380 67 890 1234",
       email: "head@church.org",
       photo: "/images/pasha.jpg",
     },
     {
-      role: "Голова братства",
+      role: t('brotherhoodHead'),
       name: "Сергій Коваленко",
       phone: "+380 99 456 7890",
       email: "brotherhood@church.org",
@@ -53,7 +55,7 @@ export default function Contacts() {
 
   return (
     <div className="contacts-page">
-      <h2 className="contacts-title">Контакти</h2>
+      <h2 className="contacts-title">{t('contactsTitle')}</h2>
 
       <div className="cards-container">
         {contacts.map((person, index) => (
@@ -74,20 +76,20 @@ export default function Contacts() {
       </div>
 
       <div className="church-info">
-        <h3>Адреса храму</h3>
-        <p>вул. Церковна 12, м. Київ, Україна</p>
+        <h3>{t('churchAddressTitle')}</h3>
+        <p>{t('churchAddress')}</p>
 
-        <h3>Графік роботи</h3>
-        <p>Щонеділі о 10:00 – Божественна Літургія</p>
+        <h3>{t('workingHoursTitle')}</h3>
+        <p>{t('workingHours')}</p>
 
-        <h3>Слідкуйте за нами</h3>
+        <h3>{t('followUsTitle')}</h3>
         <div className="social-links">
           <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
           <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
           <a href="https://t.me" target="_blank" rel="noreferrer">Telegram</a>
         </div>
 
-        <h3>Локація на карті</h3>
+        <h3>{t('locationOnMap')}</h3>
         <div className="map-container">
           <iframe
             title="Church Location"

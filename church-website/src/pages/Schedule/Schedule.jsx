@@ -1,27 +1,29 @@
 import "./Schedule.css";
+import { useTranslation } from 'react-i18next';
 
 export default function Schedule() {
+  const { t } = useTranslation();
+  
   return (
     <div className="schedule">
-      <h2 className="schedule-title">Розклад Богослужінь</h2>
+      <h2 className="schedule-title">{t('scheduleTitle')}</h2>
 
       {/* Sunday Service */}
       <div className="schedule-card">
-        <h3>Божественна Літургія</h3>
-        <p>📅 Кожної <strong>неділі</strong></p>
-        <p>🕙 Початок о <strong>10:00</strong></p>
-        <p>📍 У храмі</p>
+        <h3>{t('sundayService')}</h3>
+        <p>📅 <strong>{t('everySunday')}</strong></p>
+        <p>🕙 <strong>{t('startsAt')}</strong></p>
+        <p>📍 <strong>{t('location')}</strong></p>
       </div>
 
       {/* Note about changes */}
       <div className="schedule-card">
-        <h3>Інші Богослужіння</h3>
+        <h3>{t('otherServices')}</h3>
         <p>
-          Розклад святкових і буденних богослужінь може змінюватися
-          залежно від церковного календаря.
+      {t('note')}
         </p>
         <p>
-          Слідкуйте за актуальною інформацією у наших соціальних мережах:
+         {t('followUs')}
         </p>
         <div className="social-links">
           <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
@@ -32,7 +34,7 @@ export default function Schedule() {
 
       {/* Spiritual verse */}
       <div className="schedule-verse">
-        <p>“Прийдіть і побачите.” — Ів. 1:39</p>
+        <p>{t('verse-1')}</p>
       </div>
     </div>
   );

@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { verses } from "./verse";
+import { useTranslation } from 'react-i18next'; 
 import "./Home.css";
 
 export default function Home() {
+const { t } = useTranslation();
+
+ const verses = t("verses", { returnObjects: true });
+
   const events = [
-    { id: 1, title: "Sunday Service", image: "/images/eventsExemple.webp", description: "Join us for our weekly Sunday worship service." },
-    { id: 2, title: "Youth Meeting", image: "/images/eventsExemple.webp", description: "Our youth group gathers every Friday evening." },
-    { id: 3, title: "Bible Study", image: "/images/eventsExemple.webp", description: "Dive deeper into the Word every Wednesday." },
-    { id: 4, title: "Community Outreach", image: "/images/eventsExemple.webp", description: "Serving our community with love and compassion." },
-    { id: 5, title: "Christmas Concert", image: "/images/eventsExemple.webp", description: "Celebrate the birth of Christ with music and joy." },
-    { id: 6, title: "Prayer Night", image: "/images/eventsExemple.webp", description: "Join us for a night of prayer and worship." }
+    { id: 1, data: t("home-page.events.sundayService", { returnObjects: true }), image: "/images/eventsExemple.webp", description: "Join us for our weekly Sunday worship service." },
+    { id: 2, data: t("home-page.events.youthMeeting", { returnObjects: true }), image: "/images/eventsExemple.webp", description: "Our youth group gathers every Friday evening." },
+    { id: 3, data: t("home-page.events.bibleStudy", { returnObjects: true }), image: "/images/eventsExemple.webp", description: "Dive deeper into the Word every Wednesday." },
+    { id: 4, data: t("home-page.events.communityOutreach", { returnObjects: true }), image: "/images/eventsExemple.webp", description: "Serving our community with love and compassion." },
+    { id: 5, data: t("home-page.events.christmasConcert", { returnObjects: true }), image: "/images/eventsExemple.webp", description: "Celebrate the birth of Christ with music and joy." },
+    { id: 6, data: t("home-page.events.prayerNight", { returnObjects: true }), image: "/images/eventsExemple.webp", description: "Join us for a night of prayer and worship." }
   ];
 
   const [currentVerse, setCurrentVerse] = useState(new Date().getDate() % verses.length);
@@ -24,20 +28,20 @@ export default function Home() {
       <div className="verse-of-the-day">
         <p>{verses[currentVerse]}</p>
         <button className="next-verse-btn" onClick={handleNextVerse}>
-          Next Verse
+          {t("home-page.nextVerse")}
         </button>
       </div>
 
-      <h2 className="home-title">Latest Events</h2>
+      <h2 className="home-title">{t("home-page.latestEvents")}</h2>
       <div className="card-grid">
         {events.map((event) => (
           <div className="card" key={event.id}>
             <img src={event.image} alt={event.title} className="card-image" />
             <div className="card-content">
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
+              <h3>{event.data.title}</h3>
+              <p>{event.data.description}</p>
               <Link to={`/events/${event.id}`} className="btn">
-                Read more
+                {t("home-page.readMore")}
               </Link>
             </div>
           </div>
