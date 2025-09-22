@@ -1,10 +1,11 @@
 .footer {
-    position: fixed;
+    /* position: fixed; */
   background-color: #111827; /* темно-сірий */
   color: white;
   text-align: center;
   padding: 15px 0;
  left: 0;
  bottom: 0;
- width: 100%;
+ width: 100%;     /* or fixed/bottom if you want sticky footer */
+  z-index: 10;  
 }

@@ -8,12 +8,16 @@ import Contacts from "./pages/Contacts/Contacts";
 import Support from "./pages/Support/Support";
 import About from "./pages/About/About";
 
+import './i18n';
+
+
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
+
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
