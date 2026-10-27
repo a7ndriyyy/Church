@@ -5,7 +5,7 @@
   "contacts": "Contacts",
   "support": "Soutien",
   "welcome": "Bienvenue dans notre église",
-  "footerText": "© 2025 Notre Église. Tous droits réservés.",
+  "footerText": "UAOC — Paroisse Saint-Simon le Zélote",
 
 
     "Ukrainian Autocephalous Orthodox Church (UAOC)": "Église orthodoxe autocéphale ukrainienne (UAOC)",
@@ -39,13 +39,37 @@
   "followUs": "Suivez les informations sur nos réseaux sociaux :",
   "verse-1": "“Venez et voyez.” — Jean 1:39",
 
-    "Church Reconstruction": "Reconstruction de l'église",
-  "Help rebuild our church so it remains a place of worship and community.": "Aidez à reconstruire notre église pour qu'elle reste un lieu de prière et de communauté.",
-  "Support UK Soldiers": "Soutien aux soldats ukrainiens",
-  "Support our soldiers in the UK to provide safety and essential aid.": "Soutenez nos soldats pour assurer la sécurité et l'aide essentielle.",
-  "Valid Thru": "Valable jusqu’au",
-  "For more info, you can": "Pour plus d'informations, vous pouvez",
   "contact the priest": "contacter le prêtre",
+
+  "support-page": {
+    "title": "Soutenir notre église",
+    "text": "Votre don nous aide à préserver notre église, à assurer les offices et la vie de la communauté. Merci pour chaque contribution !",
+    "donate": "Faire un don",
+    "comingSoon": "Les dons en ligne seront bientôt disponibles.",
+    "secure": "Paiement sécurisé par carte via Stripe.",
+    "soldiers": "Si vous souhaitez aider l'armée ukrainienne, nous collectons aussi des dons pour elle — pour cela, merci de"
+  },
+
+  "admin": {
+    "title": "Admin",
+    "loginTitle": "Connexion administrateur",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "login": "Se connecter",
+    "logout": "Se déconnecter",
+    "loginError": "E-mail ou mot de passe incorrect.",
+    "notConfigured": "Le panneau d'administration n'est pas encore configuré (clés Supabase manquantes).",
+    "newEvent": "Nouvel événement",
+    "editEvent": "Modifier l'événement",
+    "allEvents": "Tous les événements",
+    "fields": { "title": "Titre", "description": "Description", "image": "Image" },
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "cancel": "Annuler",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "confirmDelete": "Supprimer l'événement « {{title}} » ?"
+  },
 
  "verses":[ 
   "Car Dieu a tant aimé le monde… (Jean 3:16)",
@@ -169,32 +193,9 @@
   "nextVerse": "Verset suivant",
   "latestEvents": "Derniers événements",
   "readMore": "Lire la suite",
-  "events": {
-    "sundayService": {
-      "title": "Culte du dimanche",
-      "description": "Rejoignez notre service de culte dominical hebdomadaire."
-    },
-    "youthMeeting": {
-      "title": "Réunion des jeunes",
-      "description": "Notre groupe de jeunes se réunit tous les vendredis soir."
-    },
-    "bibleStudy": {
-      "title": "Étude biblique",
-      "description": "Approfondissez la Parole chaque mercredi."
-    },
-    "communityOutreach": {
-      "title": "Service communautaire",
-      "description": "Servir notre communauté avec amour et compassion."
-    },
-    "christmasConcert": {
-      "title": "Concert de Noël",
-      "description": "Célébrez la naissance du Christ avec musique et joie."
-    },
-    "prayerNight": {
-      "title": "Veillée de prière",
-      "description": "Rejoignez-nous pour une nuit de prière et d'adoration."
-    }
-  }
+  "heroTitle": "Paroisse Saint-Simon le Zélote",
+  "heroSubtitle": "Église orthodoxe autocéphale ukrainienne à Paris. Divine Liturgie chaque dimanche à 10h00.",
+  "noEvents": "Aucun événement pour le moment."
 },
 
 

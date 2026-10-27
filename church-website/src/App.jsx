@@ -7,6 +7,7 @@ import Schedule from "./pages/Schedule/Schedule";
 import Contacts from "./pages/Contacts/Contacts";
 import Support from "./pages/Support/Support";
 import About from "./pages/About/About";
+import Admin from "./pages/Admin/Admin";
 
 import './i18n';
 
@@ -26,6 +27,7 @@ function App() {
              <Route path="/contacts" element={<Contacts/>} />
              <Route path="/support" element={<Support/>} />
             <Route path="/about" element={<About/>} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />

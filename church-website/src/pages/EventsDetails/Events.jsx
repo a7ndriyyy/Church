@@ -1,38 +1,52 @@
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { events } from "../Home/eventsData";
-import { useTranslation } from 'react-i18next'; 
+import { useTranslation } from 'react-i18next';
+import { getEvent } from "../../lib/events";
+import { formatEventDate } from "../Home/Home";
 import "./Events.css";
 
 export default function EventDetails() {
-const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const { id } = useParams();
-  const event = events.find((e) => e.id === parseInt(id));
+  const [event, setEvent] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getEvent(id)
+      .then(setEvent)
+      .catch(() => setEvent(null))
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  if (loading) return null;
 
   if (!event) {
     return (
-      <div style={{ padding: "20px", textAlign: "center" }}>
+      <div className="event-details">
         <h2>{t("event-details-page.eventNotFound")}</h2>
+        <Link to="/" className="back-btn">{t("event-details-page.labels.backBtn")}</Link>
       </div>
     );
   }
 
-  return (
-    <div className="event-details">
-      <h2>{event.title}</h2>
-      <img src={event.image} alt={event.title} />
+  const notSpecified = t("event-details-page.labels.notSpecified");
 
-      <p>{event.description}</p>
+  return (
+    <article className="event-details">
+      {event.image_url && <img src={event.image_url} alt={event.title} />}
+
+      <h2>{event.title}</h2>
 
       <div className="event-info">
-        <p><strong>{t("event-details-page.labels.date")}:</strong>{event.date || t("event-details-page.labels.notSpecified")}</p>
-        <p><strong>{t("event-details-page.labels.time")}:</strong> {event.time || t("event-details-page.labels.notSpecified")}</p>
-        <p><strong>{t("event-details-page.labels.location")}:</strong> {event.location || t("event-details-page.labels.notSpecified")}</p>
-        <p><strong>{t("event-details-page.labels.organizer")}::</strong> {event.organizer || t("event-details-page.labels.notSpecified")}</p>
-        <p><strong>{t("event-details-page.labels.contact")}:</strong> {event.contact || t("event-details-page.labels.notSpecified")}</p>
+        <p><strong>{t("event-details-page.labels.date")}:</strong> {formatEventDate(event.event_date, i18n.language) || notSpecified}</p>
+        <p><strong>{t("event-details-page.labels.time")}:</strong> {event.event_time || notSpecified}</p>
+        <p><strong>{t("event-details-page.labels.location")}:</strong> {event.location || notSpecified}</p>
       </div>
 
+      <p className="event-description">{event.description}</p>
+
       <Link to="/" className="back-btn">{t("event-details-page.labels.backBtn")}</Link>
-    </div>
+    </article>
   );
 }

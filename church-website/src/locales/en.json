@@ -5,7 +5,7 @@
   "contacts": "Contacts",
   "support": "Support",
   "welcome": "Welcome",
-  "footerText": "© 2025 Notre Église. Tous droits réservés.",
+  "footerText": "UAOC — Parish of St. Simon the Zealot",
 
   "Ukrainian Autocephalous Orthodox Church (UAOC)": "Ukrainian Autocephalous Orthodox Church (UAOC)",
   "aboutHistoryText": "The history of our Church, the UAOC, is an attempt to restore the Kyiv Metropolis, the people's church. Our Kyiv Metropolis was absorbed by the Moscow Patriarchate. In 1685, the ordination of Metropolitan Hedeon of Kyiv by Patriarch Joachim of Moscow initiated the process of subjugation of the Kyiv Metropolis to Moscow. The annexation was based on the 1686 Act of the Ecumenical Patriarchate of Constantinople, which granted the right for the Moscow Patriarch to ordain the Metropolitan of Kyiv. The Metropolitan of Kyiv had to commemorate the Ecumenical Patriarch of Constantinople first, thus acknowledging his authority. Eventually, Peter I abolished the Kyiv Metropolis in 1722. Interpretations of this act differ: the Moscow Patriarchate claims it was a transfer of jurisdiction, while Constantinople insists it was only permission to ordain. The beginning of the UAOC was an attempt to restore what was lost. The Ukrainian people’s desire for a national state went hand in hand with the desire for a national church. The October Revolution of 1917 in Russia gave impetus to both Ukrainian statehood and church renewal. Spiritual and secular leaders sought not only independence but also the restoration of a Ukrainian church where services and the Gospel could be heard in the native language. On May 9, 1919, St. Nicholas’ Day, Vasyl Lypkivsky proclaimed the birth of the UAOC, marking the first liturgy in Ukrainian. Composer Mykola Leontovych wrote music for this service and conducted the choir himself. The UAOC survived until the late 1930s, when it was destroyed by Soviet repression, but it continued in emigration, especially in Canada, the USA, Europe, Australia, and Brazil. In 1924–1926, Ukrainian emigrants in France organized parishes and established the Brotherhood under Ivan Karbovsky. In 1926, Ukrainians in France declared allegiance to the UAOC abroad under Archimandrite Ioan Teodorovych. That same year, Metropolitan Vasyl Lypkivsky sent greetings to the faithful in France. The Paris community later named its church after Symon Petliura. Initially, services were held in Protestant temples, later at St. Denis Church on Boulevard Blanqui. In 1947, the community purchased property in Paris and later moved to Rue Palestin. In 1995, the UAOC in the USA entered the jurisdiction of the Ecumenical Patriarchate, as the UOCC in Canada had in 1990. All bishops were accepted without re-ordination. Today, Archbishop Daniel of Pamphylia, head of the Western Eparchy of the UOC of the USA, oversees the Ukrainian Orthodox in Western Europe and played a key role, together with Bishop Ilarion of Edmonton, as exarch in the granting of autocephaly to the OCU.",
@@ -36,13 +36,37 @@
   "followUs": "Follow the latest info on our social networks:",
   "verse": "“Come and see.” — John 1:39",
 
-   "Church Reconstruction": "Church Reconstruction",
-  "Help rebuild our church so it remains a place of worship and community.": "Help rebuild our church so it remains a place of worship and community.",
-  "Support UK Soldiers": "Support UK Soldiers",
-  "Support our soldiers in the UK to provide safety and essential aid.": "Support our soldiers in the UK to provide safety and essential aid.",
-  "Valid Thru": "Valid Thru",
-  "For more info, you can": "For more info, you can",
   "contact the priest": "contact the priest",
+
+  "support-page": {
+    "title": "Support our church",
+    "text": "Your donation helps preserve our church and keep services and community life going. Thank you for every gift!",
+    "donate": "Donate",
+    "comingSoon": "Online donations will be available soon.",
+    "secure": "Secure card payment via Stripe.",
+    "soldiers": "If you would like to help the Ukrainian army, we also collect donations for it — for that, please"
+  },
+
+  "admin": {
+    "title": "Admin",
+    "loginTitle": "Admin sign-in",
+    "email": "Email",
+    "password": "Password",
+    "login": "Sign in",
+    "logout": "Sign out",
+    "loginError": "Wrong email or password.",
+    "notConfigured": "The admin panel is not set up yet (missing Supabase keys).",
+    "newEvent": "New event",
+    "editEvent": "Edit event",
+    "allEvents": "All events",
+    "fields": { "title": "Title", "description": "Description", "image": "Image" },
+    "save": "Save",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDelete": "Delete the event \"{{title}}\"?"
+  },
 
 
 
@@ -172,32 +196,9 @@
     "nextVerse": "Next Verse",
     "latestEvents": "Latest Events",
     "readMore": "Read more",
-    "events": {
-      "sundayService": {
-        "title": "Sunday Service",
-        "description": "Join us for our weekly Sunday worship service."
-      },
-      "youthMeeting": {
-        "title": "Youth Meeting",
-        "description": "Our youth group gathers every Friday evening."
-      },
-      "bibleStudy": {
-        "title": "Bible Study",
-        "description": "Dive deeper into the Word every Wednesday."
-      },
-      "communityOutreach": {
-        "title": "Community Outreach",
-        "description": "Serving our community with love and compassion."
-      },
-      "christmasConcert": {
-        "title": "Christmas Concert",
-        "description": "Celebrate the birth of Christ with music and joy."
-      },
-      "prayerNight": {
-        "title": "Prayer Night",
-        "description": "Join us for a night of prayer and worship."
-      }
-    }
+    "heroTitle": "Parish of St. Simon the Zealot",
+    "heroSubtitle": "Ukrainian Autocephalous Orthodox Church in Paris. Divine Liturgy every Sunday at 10:00.",
+    "noEvents": "No events yet."
   },
 
   "event-details-page": {

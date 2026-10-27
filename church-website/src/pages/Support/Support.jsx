@@ -3,70 +3,33 @@ import "./Support.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
-const Support = () => {
+const donationLink = process.env.REACT_APP_STRIPE_DONATION_LINK;
 
-const { t } = useTranslation();
+const Support = () => {
+  const { t } = useTranslation();
 
   return (
     <div className="support-page">
-      <div className="half-page">
-        <h2 className="card-title">{t("Church Reconstruction")}</h2>
-           <p className="desc">
-          {t(
-            "Help rebuild our church so it remains a place of worship and community."
-          )}
-        </p>
-        <div className="card-container">
-          <div className="card-support">
-            <div className="card-bg"></div>
-            <div className="card-content">
-              <div className="card-chip"></div>
-              <div className="card-logo">BANK</div>
-              <div className="card-iban">
-                FR76 3000 6000 0112 3456 7890 189
-              </div>
-              <div className="card-info">
-                <div className="card-name">CHURCH FUND</div>
-                <div className="card-valid">
-                  {t("Valid Thru")} <span>12/27</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <section className="donate-panel">
+        <img src="/images/Logocross.png" alt="" className="donate-cross" />
+        <h1 className="section-title">{t("support-page.title")}</h1>
+        <p className="donate-text">{t("support-page.text")}</p>
 
-      <div className="half-page">
-        <h2 className="card-title">{t("Support UK Soldiers")}</h2>
-             <p className="desc">
-          {t(
-            "Support our soldiers in the UK to provide safety and essential aid."
-          )}
-        </p>
-        <div className="card-container">
-          <div className="card-support">
-            <div className="card-bg"></div>
-            <div className="card-content">
-              <div className="card-chip"></div>
-              <div className="card-logo">BANK</div>
-              <div className="card-iban">
-                GB29 NWBK 6016 1331 9268 19
-              </div>
-              <div className="card-info">
-                <div className="card-name">UK SOLDIERS FUND</div>
-                <div className="card-valid">
-                  {t("Valid Thru")} <span>11/26</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        {donationLink ? (
+          <a className="btn btn-gold donate-btn" href={donationLink} target="_blank" rel="noopener noreferrer">
+            {t("support-page.donate")}
+          </a>
+        ) : (
+          <p className="donate-text">{t("support-page.comingSoon")}</p>
+        )}
 
+        <p className="donate-secure">{t("support-page.secure")}</p>
+      </section>
 
-       <div className="support-footer">
-        {t("For more info, you can")}{" "} <Link to="/contacts">{t("contact the priest")}</Link>.
-      </div>
+      <p className="soldiers-note">
+        {t("support-page.soldiers")}{" "}
+        <Link to="/contacts">{t("contact the priest")}</Link>.
+      </p>
     </div>
   );
 };

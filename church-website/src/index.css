@@ -1,45 +1,123 @@
+:root {
+  --blue: #16295c;
+  --blue-light: #2a4a9a;
+  --gold: #e0b33c;
+  --gold-dark: #a87d12;
+  --cream: #f8f4ea;
+  --paper: #fdfbf6;
+  --ink: #1d2433;
+  --muted: #5b6475;
+  --line: #e4ddcc;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url('../public/images/church-bg.jpg') no-repeat center center fixed;
+  font-family: var(--font-body);
+  background: #0e1a38 url('../public/images/church-bg.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
   position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: url('../public/images/cross-pattern.svg') repeat;
-    opacity: 0.03;
+  opacity: 0.03;
   z-index: -1;
 }
 
 body::after {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 26, 56, 0.75), rgba(14, 26, 56, 0.55) 40%, rgba(14, 26, 56, 0.85));
   z-index: -1;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+main {
+  min-height: calc(100vh - 180px);
+}
+
+/* ===== Shared ===== */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 600;
+  color: var(--cream);
+  margin: 0 0 32px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #2a63d4 50%, var(--gold) 50%);
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--blue);
+  color: #fff;
+  border: 1px solid var(--blue);
+  padding: 11px 22px;
+  border-radius: 999px;
+  font: 600 0.95rem var(--font-body);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--blue-light);
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.btn-gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--blue);
+}
+
+.btn-gold:hover {
+  background: #edc456;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.admin-panel .btn-ghost:hover {
+  background: rgba(22, 41, 92, 0.08);
 }

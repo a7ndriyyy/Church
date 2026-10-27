@@ -1,3 +1,20 @@
+# Church website setup
+
+## Events admin panel (Supabase)
+
+1. Create a free project at https://supabase.com.
+2. In the dashboard open **SQL Editor**, paste `supabase/setup.sql` and run it.
+3. In **Authentication → Users → Add user**, create the admin's email and password.
+4. Copy `.env.example` to `.env.local` and fill in the URL and anon key from **Project Settings → API**.
+5. The admin signs in at `/admin` (link in the footer) to add, edit or delete events with a picture.
+
+## Church donations (Stripe)
+
+1. In Stripe create a **Payment Link** with "Customers choose what to pay".
+2. Put the link in `REACT_APP_STRIPE_DONATION_LINK` in `.env.local`.
+
+For the deployed site, the same three `REACT_APP_*` values must be available when `npm run build` runs.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
