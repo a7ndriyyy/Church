@@ -7,21 +7,21 @@ export default function Contacts() {
   const contacts = [
     {
       role: t('priest'),
-      name: "о. Андрій Петров",
+      name: t('namePriest'),
       phone: "+380 50 123 4567",
       email: "priest@church.org",
       photo: "/images/pasha.jpg",
     },
     {
       role: t('parishHead'),
-      name: "Іван Іваненко",
+      name: t('nameParisHead'),
       phone: "+380 67 890 1234",
       email: "head@church.org",
       photo: "/images/pasha.jpg",
     },
     {
       role: t('brotherhoodHead'),
-      name: "Сергій Коваленко",
+      name: t('nameBrotherHead'),
       phone: "+380 99 456 7890",
       email: "brotherhood@church.org",
       photo: "/images/pasha.jpg",
@@ -85,15 +85,14 @@ export default function Contacts() {
         <h3>{t('followUsTitle')}</h3>
         <div className="social-links">
           <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="https://t.me" target="_blank" rel="noreferrer">Telegram</a>
+          <a href="https://www.instagram.com/eglise_orthodoxe_ukrainienne_?igsh=ZXk4N2J2Zmp6OGxm&utm_source=qr" target="_blank" rel="noreferrer">Instagram</a>
         </div>
 
         <h3>{t('locationOnMap')}</h3>
         <div className="map-container">
           <iframe
             title="Church Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.9875396121233!2d30.5234!3d50.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce07db87f47f%3A0x1f4c4c0d1d6d52e7!2sSaint%20Sophia%20Cathedral!5e0!3m2!1sen!2sua!4v1694880000000!5m2!1sen!2sua"
+            src="https://www.google.com/maps?q=6+rue+palestine+75019+paris&output=embed"
             width="100%"
             height="300"
             style={{ border: 0 }}

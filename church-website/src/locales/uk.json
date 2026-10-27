@@ -15,7 +15,7 @@
 
     "contactsTitle": "Контакти",
   "churchAddressTitle": "Адреса храму",
-  "churchAddress": "вул. Церковна 12, м. Київ, Україна",
+  "churchAddress": "6 вул. Палестіне, 75019, Париж",
   "workingHoursTitle": "Графік роботи",
   "workingHours": "Щонеділі о 10:00 – Божественна Літургія",
   "followUsTitle": "Слідкуйте за нами",
@@ -23,6 +23,9 @@
   "priest": "Священник",
   "parishHead": "Голова парафії",
   "brotherhoodHead": "Голова братства",
+  "namePriest":"Василь Баглай",
+  "nameParisHead":"Павло Фролов",
+  "nameBrotherHead":"Наталя Н'єр",
 
 
   "scheduleTitle": "Розклад Богослужінь",

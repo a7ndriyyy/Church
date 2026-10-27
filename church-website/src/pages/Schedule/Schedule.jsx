@@ -27,8 +27,7 @@ export default function Schedule() {
         </p>
         <div className="social-links">
           <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="https://t.me" target="_blank" rel="noreferrer">Telegram</a>
+          <a href="https://www.instagram.com/eglise_orthodoxe_ukrainienne_?igsh=ZXk4N2J2Zmp6OGxm&utm_source=qr" target="_blank" rel="noreferrer">Instagram</a>
         </div>
       </div>
 

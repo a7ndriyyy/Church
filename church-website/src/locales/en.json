@@ -14,7 +14,7 @@
 
 "contactsTitle": "Contacts",
   "churchAddressTitle": "Church Address",
-  "churchAddress": "12 Tserkovna St., Kyiv, Ukraine",
+  "churchAddress": "6 rue Palestine, 75019 Paris",
   "workingHoursTitle": "Working Hours",
   "workingHours": "Every Sunday at 10:00 – Divine Liturgy",
   "followUsTitle": "Follow Us",
@@ -22,6 +22,9 @@
   "priest": "Priest",
   "parishHead": "Parish Head",
   "brotherhoodHead": "Brotherhood Head",
+  "namePriest":"Vasyl Bahlai",
+  "nameParisHead":"Pavlo Frolov",
+  "nameBrotherHead":"Natalia Nier",
 
     "scheduleTitle": "Schedule of Services",
   "sundayService": "Divine Liturgy",
