@@ -11,7 +11,7 @@ const Support = () => {
   return (
     <div className="support-page">
       <section className="donate-panel">
-        <img src="/images/Logocross.png" alt="" className="donate-cross" />
+        <img src={`${process.env.PUBLIC_URL}/images/Logocross.png`} alt="" className="donate-cross" />
         <h1 className="section-title">{t("support-page.title")}</h1>
         <p className="donate-text">{t("support-page.text")}</p>
 

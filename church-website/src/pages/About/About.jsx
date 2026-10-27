@@ -30,8 +30,8 @@ export default function About() {
               <ul className="file-list">
                 <li><a href="./downloads/УАПЦ історія 1998.pdf" download>УАПЦ історія 1998</a></li>
                 <li><a href="./downloads/шлях_перемоги_01051960_звернення_у_справі_будови.pdf" download>шлях_перемоги_01051960_звернення_у_справі_будови</a></li>
-                <li><a href="./downloads/установчі_збори_братства_Св_Симона_1964 (2).pdf" download>установчі_збори_братства_Св_Симона_1964</a></li>
-                <li><a href="./downloads/УАПЦ нарис історії. 16 p -1924-1947pp. (2).pdf" download>УАПЦ нарис історії. 16 p -1924-1947pp.</a></li>
+                <li><a href="./downloads/установчі_збори_братства_Св_Симона_1964.pdf" download>установчі_збори_братства_Св_Симона_1964</a></li>
+                <li><a href="./downloads/УАПЦ нарис історії.  16 p -1924-1947pp..pdf" download>УАПЦ нарис історії. 16 p -1924-1947pp.</a></li>
                 <li><a href="./downloads/УАПЦ історичний огляд 3 page.pdf" download>УАПЦ історичний огляд 3 page</a></li>
                 <li><a href="./downloads/УАПЦ заклик.pdf" download>УАПЦ заклик</a></li>
                 <li><a href="./downloads/статут УАПЦ на еміграції проєкт.pdf" download>статут УАПЦ на еміграції проєкт</a></li>

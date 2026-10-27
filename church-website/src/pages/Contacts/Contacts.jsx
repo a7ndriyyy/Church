@@ -10,21 +10,21 @@ export default function Contacts() {
       name: t('namePriest'),
       phone: "+380 50 123 4567",
       email: "priest@church.org",
-      photo: "/images/pasha.jpg",
+      photo: `${process.env.PUBLIC_URL}/images/pasha.jpg`,
     },
     {
       role: t('parishHead'),
       name: t('nameParisHead'),
       phone: "+380 67 890 1234",
       email: "head@church.org",
-      photo: "/images/pasha.jpg",
+      photo: `${process.env.PUBLIC_URL}/images/pasha.jpg`,
     },
     {
       role: t('brotherhoodHead'),
       name: t('nameBrotherHead'),
       phone: "+380 99 456 7890",
       email: "brotherhood@church.org",
-      photo: "/images/pasha.jpg",
+      photo: `${process.env.PUBLIC_URL}/images/pasha.jpg`,
     },
   ];
 

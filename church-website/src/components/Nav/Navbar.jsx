@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="logo-title">
-        <img className="logo-cross " id="Logocross" height={70} width={60} src="/images/Logocross.png" alt="Church Logo"/>
+        <img className="logo-cross " id="Logocross" height={70} width={60} src={`${process.env.PUBLIC_URL}/images/Logocross.png`} alt="Church Logo"/>
         <h1 className="logo">УKRAЇНСЬKA AВTOKEФAЛЬНA ПРAВOСЛAВНA ЦEРKВA</h1>
         </div>
 

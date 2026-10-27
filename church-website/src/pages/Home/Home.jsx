@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <div className="home container-home">
       <section className="hero">
-        <img src="/images/Logocross.png" alt="" className="hero-cross" />
+        <img src={`${process.env.PUBLIC_URL}/images/Logocross.png`} alt="" className="hero-cross" />
         <h1>{t("home-page.heroTitle")}</h1>
         <p>{t("home-page.heroSubtitle")}</p>
         <div className="hero-actions">
@@ -63,7 +63,7 @@ export default function Home() {
         {events.map((event) => (
           <Link to={`/events/${event.id}`} className="card" key={event.id}>
             <img
-              src={event.image_url || "/images/eventsExemple.webp"}
+              src={event.image_url || `${process.env.PUBLIC_URL}/images/eventsExemple.webp`}
               alt={event.title}
               className="card-image"
             />

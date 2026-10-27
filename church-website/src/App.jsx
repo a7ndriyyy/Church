@@ -15,7 +15,7 @@ import './i18n';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="flex flex-col min-h-screen">
         <Navbar />
 
