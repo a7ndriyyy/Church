@@ -6,7 +6,7 @@ export default function Schedule() {
   
   return (
     <div className="schedule">
-      <h2 className="schedule-title">{t('scheduleTitle')}</h2>
+      <h2 className="section-title">{t('scheduleTitle')}</h2>
 
       {/* Sunday Service */}
       <div className="schedule-card">
@@ -33,7 +33,7 @@ export default function Schedule() {
 
       {/* Spiritual verse */}
       <div className="schedule-verse">
-        <p>{t('verse-1')}</p>
+        <p>{t('verse')}</p>
       </div>
     </div>
   );

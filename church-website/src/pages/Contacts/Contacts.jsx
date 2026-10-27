@@ -8,23 +8,22 @@ export default function Contacts() {
     {
       role: t('priest'),
       name: t('namePriest'),
-      phone: "+380 50 123 4567",
-      email: "priest@church.org",
-      photo: `${process.env.PUBLIC_URL}/images/pasha.jpg`,
+      phone: "+33 6 68 71 38 12",
+      photo: `${process.env.PUBLIC_URL}/images/priest-vasyl.jpg`,
+      // zoom in on the face in the wide photo
+      photoSize: "320%",
+      photoPosition: "64% 34%",
     },
     {
       role: t('parishHead'),
       name: t('nameParisHead'),
-      phone: "+380 67 890 1234",
-      email: "head@church.org",
+      phone: "+33 7 53 30 59 41",
       photo: `${process.env.PUBLIC_URL}/images/pasha.jpg`,
     },
     {
       role: t('brotherhoodHead'),
       name: t('nameBrotherHead'),
-      phone: "+380 99 456 7890",
-      email: "brotherhood@church.org",
-      photo: `${process.env.PUBLIC_URL}/images/pasha.jpg`,
+      phone: "+33 6 18 19 45 89",
     },
   ];
 
@@ -55,7 +54,7 @@ export default function Contacts() {
 
   return (
     <div className="contacts-page">
-      <h2 className="contacts-title">{t('contactsTitle')}</h2>
+      <h2 className="section-title">{t('contactsTitle')}</h2>
 
       <div className="cards-container">
         {contacts.map((person, index) => (
@@ -66,11 +65,27 @@ export default function Contacts() {
             data-index={index}
             style={{ transitionDelay: `${index * 0.2}s` }}
           >
-            <img src={person.photo} alt={person.name} className="contact-photo" />
+            {person.photo ? (
+              <div
+                className="contact-photo"
+                role="img"
+                aria-label={person.name}
+                style={{
+                  backgroundImage: `url("${person.photo}")`,
+                  backgroundSize: person.photoSize || "cover",
+                  backgroundPosition: person.photoPosition || "center",
+                }}
+              />
+            ) : (
+              <div className="contact-photo contact-initials" aria-hidden="true">
+                {person.name.split(" ").map((part) => part[0]).join("").slice(0, 2)}
+              </div>
+            )}
             <h3>{person.role}</h3>
-            <p><strong>{person.name}</strong></p>
-            <p>📞 {person.phone}</p>
-            <p>✉️ {person.email}</p>
+            <p className="contact-name">{person.name}</p>
+            <a className="contact-phone" href={`tel:${person.phone.replace(/\s/g, "")}`}>
+              {person.phone}
+            </a>
           </div>
         ))}
       </div>

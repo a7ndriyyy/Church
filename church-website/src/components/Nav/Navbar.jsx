@@ -17,10 +17,10 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="logo-title">
-        <img className="logo-cross " id="Logocross" height={70} width={60} src={`${process.env.PUBLIC_URL}/images/Logocross.png`} alt="Church Logo"/>
+        <Link to="/" className="logo-title" style={{ textDecoration: "none" }} onClick={() => setIsOpen(false)}>
+        <img className="logo-cross" id="Logocross" src={`${process.env.PUBLIC_URL}/images/Logocross.png`} alt="Church Logo"/>
         <h1 className="logo">УKRAЇНСЬKA AВTOKEФAЛЬНA ПРAВOСЛAВНA ЦEРKВA</h1>
-        </div>
+        </Link>
 
         {/* Desktop menu */}
         <ul className="nav-links">
@@ -43,10 +43,12 @@ export default function Navbar() {
 
         {/* Burger button */}
         <button 
-          className="burger" 
+          className="burger"
+          aria-label="Menu"
+          aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}
         >
-          ☰
+          {isOpen ? "✕" : "☰"}
         </button>
       </div>
 

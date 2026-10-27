@@ -1,66 +1,29 @@
 .contacts-page {
-  padding: 80px 20px 90px 20px;
+  padding: 60px 20px 90px;
   max-width: 1000px;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
-  color: #1f2937;
-}
-
-/* Заголовок */
-.contacts-title {
   text-align: center;
-  font-size: 32px;
-  color: #eeeff3;
-  margin-bottom: 40px;
-  font-weight: 700;
-  position: relative;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.contacts-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #3b82f6;
-  margin: 8px auto 0;
-  border-radius: 2px;
-  transition: width 0.3s, background 0.3s;
-}
-
-.contacts-title:hover,
-.contacts-title:focus {
-  color: #3b82f6;
-  transform: scale(1.05);
-}
-
-.contacts-title:hover::after,
-.contacts-title:focus::after {
-  width: 100px;
-  background: #1e40af;
 }
 
 /* Контейнер карток */
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
 }
 
 /* Картки контактів */
 .contact-card {
-  background: #f9fafb;
-  padding: 20px;
-  border-radius: 12px;
-  width: 260px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  background: var(--paper);
+  color: var(--ink);
+  padding: 28px 20px;
+  border-radius: var(--radius);
+  border-top: 4px solid var(--gold);
+  box-shadow: var(--shadow);
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s ease, transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-  cursor: default;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .contact-card.visible {
@@ -68,83 +31,140 @@
   transform: translateY(0);
 }
 
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
 /* Фото */
 .contact-photo {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 14px;
   border-radius: 50%;
-  margin-bottom: 12px;
-  border: 3px solid #1e3a8a;
-  transition: transform 0.3s, border-color 0.3s;
+  border: 3px solid var(--gold);
+  background-repeat: no-repeat;
+  background-color: var(--line);
 }
 
-.contact-photo:hover {
-  transform: scale(1.08);
-  border-color: #3b82f6;
+.contact-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+  color: var(--cream);
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 600;
 }
 
 /* Тексти карток */
 .contact-card h3 {
-  font-size: 20px;
-  color: #1e3a8a;
-  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold-dark);
+  margin: 0 0 6px;
 }
 
-.contact-card p {
-  font-size: 14px;
-  margin: 4px 0;
-  color: #374151;
+.contact-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin: 0 0 14px;
+}
+
+.contact-phone {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contact-phone:hover {
+  background: var(--blue-light);
 }
 
 /* Інформація про храм */
+.church-info {
+  text-align: left;
+  background: rgba(11, 21, 48, 0.6);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
 .church-info h3 {
-  margin-top: 20px;
-  color: #edeff7;
-  font-size: 18px;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin: 24px 0 6px;
+}
+
+.church-info h3:first-child {
+  margin-top: 0;
 }
 
 .church-info p {
   margin: 6px 0;
-  font-size: 15px;
-  color: #edeff7;
+  font-size: 1rem;
+  color: var(--cream);
 }
 
 /* Соціальні посилання */
 .social-links {
   display: flex;
   gap: 12px;
-  margin: 15px 0 25px;
+  margin: 12px 0 8px;
   flex-wrap: wrap;
 }
 
 .social-links a {
   text-decoration: none;
-  color: white;
-  background: #1e3a8a;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: all 0.3s;
+  color: var(--blue);
+  background: var(--gold);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
 }
 
-.social-links a:hover,
-.social-links a:focus {
-  background: #3b82f6;
-  transform: translateY(-2px);
+.social-links a:hover {
+  background: #edc456;
 }
 
 /* Карта */
 .map-container {
-  margin-top: 20px;
+  margin-top: 12px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
-/* Анімація карток вже задана, залишаємо */
+/* Tablet */
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* centre the last card when it is alone on its row */
+  .contact-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 12px);
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .contacts-page {
+    padding: 36px 16px 60px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .church-info {
+    padding: 20px;
+  }
+}
