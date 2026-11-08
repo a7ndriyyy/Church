@@ -5,13 +5,13 @@ import { useTranslation } from 'react-i18next';
 export default function Contacts() {
   const { t } = useTranslation();
   // Order on screen: priest left, Natalia centre, Pavlo right.
-  // Fill in `email` to show it under the phone number.
+  // TODO: replace the example.com placeholders with the real Gmail addresses.
   const contacts = [
     {
       role: t('priest'),
       name: t('namePriest'),
       phone: "+33 6 68 71 38 12",
-      email: "",
+      email: "pere.vasyl@example.com",
       photo: `${process.env.PUBLIC_URL}/images/priest-vasyl.jpg`,
       // keep the priest centred in the wide photo
       photoPosition: "64% 30%",
@@ -20,13 +20,13 @@ export default function Contacts() {
       role: t('brotherhoodHead'),
       name: t('nameBrotherHead'),
       phone: "+33 6 18 19 45 89",
-      email: "",
+      email: "natalia.nier@example.com",
     },
     {
       role: t('parishHead'),
       name: t('nameParisHead'),
       phone: "+33 7 53 30 59 41",
-      email: "",
+      email: "pavlo.frolov@example.com",
       photo: `${process.env.PUBLIC_URL}/images/pasha.jpg`,
       photoPosition: "center 25%",
     },
