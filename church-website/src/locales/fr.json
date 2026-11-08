@@ -18,7 +18,7 @@
   "churchAddressTitle": "Adresse de l'église",
   "churchAddress": "6 rue Palestine, 75019 Paris",
   "workingHoursTitle": "Horaires",
-  "workingHours": "Chaque dimanche à 10h00 – Divine Liturgie",
+  "workingHours": "Le dimanche à 10h00 – Divine Liturgie",
   "followUsTitle": "Suivez-nous",
   "locationOnMap": "Emplacement sur la carte",
   "priest": "Prêtre",
@@ -31,7 +31,7 @@
 
     "scheduleTitle": "Horaire des Offices",
   "sundayService": "Divine Liturgie",
-  "everySunday": "Chaque dimanche",
+  "everySunday": "Le dimanche",
   "startsAt": "Commence à 10:00",
   "location": "À l'église",
   "otherServices": "Autres Offices",
@@ -192,9 +192,12 @@
 "home-page": {
   "nextVerse": "Verset suivant",
   "latestEvents": "Derniers événements",
+  "upcomingEvents": "Événements à venir",
+  "pastEvents": "Événements passés",
+  "noUpcoming": "Aucun événement à venir pour le moment.",
   "readMore": "Lire la suite",
   "heroTitle": "Paroisse Saint-Simon le Zélote",
-  "heroSubtitle": "Église orthodoxe autocéphale ukrainienne à Paris. Divine Liturgie chaque dimanche à 10h00.",
+  "heroSubtitle": "Église orthodoxe autocéphale ukrainienne à Paris. Divine Liturgie le dimanche à 10h00.",
   "noEvents": "Aucun événement pour le moment."
 },
 

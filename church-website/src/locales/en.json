@@ -16,7 +16,7 @@
   "churchAddressTitle": "Church Address",
   "churchAddress": "6 rue Palestine, 75019 Paris",
   "workingHoursTitle": "Working Hours",
-  "workingHours": "Every Sunday at 10:00 – Divine Liturgy",
+  "workingHours": "Sundays at 10:00 – Divine Liturgy",
   "followUsTitle": "Follow Us",
   "locationOnMap": "Location on Map",
   "priest": "Priest",
@@ -28,7 +28,7 @@
 
     "scheduleTitle": "Schedule of Services",
   "sundayService": "Divine Liturgy",
-  "everySunday": "Every Sunday",
+  "everySunday": "Sundays",
   "startsAt": "Starts at 10:00",
   "location": "At the church",
   "otherServices": "Other Services",
@@ -195,9 +195,12 @@
   "home-page": {
     "nextVerse": "Next Verse",
     "latestEvents": "Latest Events",
+    "upcomingEvents": "Upcoming events",
+    "pastEvents": "Past events",
+    "noUpcoming": "No upcoming events at the moment.",
     "readMore": "Read more",
     "heroTitle": "Parish of St. Simon the Zealot",
-    "heroSubtitle": "Ukrainian Autocephalous Orthodox Church in Paris. Divine Liturgy every Sunday at 10:00.",
+    "heroSubtitle": "Ukrainian Autocephalous Orthodox Church in Paris. Divine Liturgy on Sundays at 10:00.",
     "noEvents": "No events yet."
   },
 

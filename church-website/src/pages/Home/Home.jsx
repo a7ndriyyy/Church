@@ -28,6 +28,8 @@ export default function Home() {
       .finally(() => setLoading(false));
   }, []);
 
+  const { upcoming, past } = splitEvents(events);
+
   const [currentVerse, setCurrentVerse] = useState(new Date().getDate() % verses.length);
 
   const handleNextVerse = () => {
@@ -53,31 +55,68 @@ export default function Home() {
         </button>
       </div>
 
-      <h2 className="section-title">{t("home-page.latestEvents")}</h2>
+      <h2 className="section-title">{t("home-page.upcomingEvents")}</h2>
 
-      {!loading && events.length === 0 && (
-        <p className="no-events">{t("home-page.noEvents")}</p>
+      {!loading && upcoming.length === 0 && (
+        <p className="no-events">{t("home-page.noUpcoming")}</p>
       )}
 
-      <div className="card-grid">
-        {events.map((event) => (
-          <Link to={`/events/${event.id}`} className="card" key={event.id}>
-            <img
-              src={event.image_url || `${process.env.PUBLIC_URL}/images/eventsExemple.webp`}
-              alt={event.title}
-              className="card-image"
-            />
-            <div className="card-content">
-              {event.event_date && (
-                <span className="card-date">{formatEventDate(event.event_date, i18n.language)}</span>
-              )}
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
-              <span className="card-more">{t("home-page.readMore")} →</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <EventGrid events={upcoming} lang={i18n.language} readMore={t("home-page.readMore")} />
+
+      {past.length > 0 && (
+        <>
+          <h2 className="section-title past-title">{t("home-page.pastEvents")}</h2>
+          <EventGrid events={past} lang={i18n.language} readMore={t("home-page.readMore")} past />
+        </>
+      )}
     </div>
   );
+}
+
+function EventGrid({ events, lang, readMore, past = false }) {
+  return (
+    <div className={`card-grid ${past ? "card-grid-past" : ""}`}>
+      {events.map((event) => (
+        <Link to={`/events/${event.id}`} className="card" key={event.id}>
+          <img
+            src={event.image_url || `${process.env.PUBLIC_URL}/images/eventsExemple.webp`}
+            alt={event.title}
+            className="card-image"
+          />
+          <div className="card-content">
+            {event.event_date && (
+              <span className="card-date">{formatEventDate(event.event_date, lang)}</span>
+            )}
+            <h3>{event.title}</h3>
+            <p>{event.description}</p>
+            <span className="card-more">{readMore} →</span>
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+// "YYYY-MM-DD" for today in the visitor's time zone, comparable with event_date
+function todayString() {
+  const now = new Date();
+  const pad = (n) => String(n).padStart(2, "0");
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
+
+// Upcoming: today or later, soonest first; events without a date go last.
+// Past: before today, most recent first.
+function splitEvents(events) {
+  const today = todayString();
+  const upcoming = events
+    .filter((e) => !e.event_date || e.event_date >= today)
+    .sort((a, b) => {
+      if (!a.event_date) return 1;
+      if (!b.event_date) return -1;
+      return a.event_date.localeCompare(b.event_date);
+    });
+  const past = events
+    .filter((e) => e.event_date && e.event_date < today)
+    .sort((a, b) => b.event_date.localeCompare(a.event_date));
+  return { upcoming, past };
 }

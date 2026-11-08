@@ -4,26 +4,31 @@ import { useTranslation } from 'react-i18next';
 
 export default function Contacts() {
   const { t } = useTranslation();
+  // Order on screen: priest left, Natalia centre, Pavlo right.
+  // Fill in `email` to show it under the phone number.
   const contacts = [
     {
       role: t('priest'),
       name: t('namePriest'),
       phone: "+33 6 68 71 38 12",
+      email: "",
       photo: `${process.env.PUBLIC_URL}/images/priest-vasyl.jpg`,
-      // zoom in on the face in the wide photo
-      photoSize: "320%",
-      photoPosition: "64% 34%",
-    },
-    {
-      role: t('parishHead'),
-      name: t('nameParisHead'),
-      phone: "+33 7 53 30 59 41",
-      photo: `${process.env.PUBLIC_URL}/images/pasha.jpg`,
+      // keep the priest centred in the wide photo
+      photoPosition: "64% 30%",
     },
     {
       role: t('brotherhoodHead'),
       name: t('nameBrotherHead'),
       phone: "+33 6 18 19 45 89",
+      email: "",
+    },
+    {
+      role: t('parishHead'),
+      name: t('nameParisHead'),
+      phone: "+33 7 53 30 59 41",
+      email: "",
+      photo: `${process.env.PUBLIC_URL}/images/pasha.jpg`,
+      photoPosition: "center 25%",
     },
   ];
 
@@ -72,7 +77,6 @@ export default function Contacts() {
                 aria-label={person.name}
                 style={{
                   backgroundImage: `url("${person.photo}")`,
-                  backgroundSize: person.photoSize || "cover",
                   backgroundPosition: person.photoPosition || "center",
                 }}
               />
@@ -86,6 +90,11 @@ export default function Contacts() {
             <a className="contact-phone" href={`tel:${person.phone.replace(/\s/g, "")}`}>
               {person.phone}
             </a>
+            {person.email && (
+              <a className="contact-email" href={`mailto:${person.email}`}>
+                {person.email}
+              </a>
+            )}
           </div>
         ))}
       </div>

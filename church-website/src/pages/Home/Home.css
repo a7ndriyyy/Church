@@ -154,6 +154,23 @@
   color: var(--blue);
 }
 
+/* ===== Past events ===== */
+.past-title {
+  margin-top: 70px;
+}
+
+.card-grid-past .card {
+  opacity: 0.85;
+}
+
+.card-grid-past .card-image {
+  filter: grayscale(35%);
+}
+
+.card-grid-past .card:hover {
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 30px 0;
