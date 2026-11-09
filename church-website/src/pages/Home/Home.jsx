@@ -63,12 +63,13 @@ export default function Home() {
 
       <EventGrid events={upcoming} lang={i18n.language} readMore={t("home-page.readMore")} />
 
-      {past.length > 0 && (
-        <>
-          <h2 className="section-title past-title">{t("home-page.pastEvents")}</h2>
-          <EventGrid events={past} lang={i18n.language} readMore={t("home-page.readMore")} past />
-        </>
+      <h2 className="section-title past-title">{t("home-page.pastEvents")}</h2>
+
+      {!loading && past.length === 0 && (
+        <p className="no-events">{t("home-page.noPast")}</p>
       )}
+
+      <EventGrid events={past} lang={i18n.language} readMore={t("home-page.readMore")} past />
     </div>
   );
 }
@@ -105,7 +106,9 @@ function todayString() {
 }
 
 // Upcoming: today or later, soonest first; events without a date go last.
-// Past: before today, most recent first.
+// Past: before today, most recent first, only the last few.
+const PAST_EVENTS_SHOWN = 6;
+
 function splitEvents(events) {
   const today = todayString();
   const upcoming = events
@@ -117,6 +120,7 @@ function splitEvents(events) {
     });
   const past = events
     .filter((e) => e.event_date && e.event_date < today)
-    .sort((a, b) => b.event_date.localeCompare(a.event_date));
+    .sort((a, b) => b.event_date.localeCompare(a.event_date))
+    .slice(0, PAST_EVENTS_SHOWN);
   return { upcoming, past };
 }

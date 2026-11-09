@@ -44,11 +44,13 @@
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(5, 10, 25, 0.7);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
+  animation: fade-in 0.25s ease both;
 }
 
 .modal-content {
@@ -69,7 +71,7 @@
 .modal-content h2 {
   font-family: var(--font-heading);
   color: var(--blue);
-  margin-top: 0;
+  margin: 0 40px 16px 0;
 }
 
 @keyframes slideDown {
@@ -80,32 +82,60 @@
 /* Кнопка закриття */
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 16px;
-  font-size: 28px;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(22, 41, 92, 0.08);
+  font-size: 24px;
   line-height: 1;
   cursor: pointer;
   color: var(--blue);
 }
 
-/* Файли */
-.file-list {
-  padding-left: 20px;
+.close-btn:hover {
+  background: rgba(22, 41, 92, 0.16);
 }
 
-.file-list li {
-  margin: 8px 0;
+/* Файли */
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-list li + li {
+  border-top: 1px solid var(--line);
 }
 
 .file-list a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 6px;
+  border-radius: 8px;
   color: var(--blue);
-  font-weight: 600;
+  font-weight: 500;
+  line-height: 1.35;
   text-decoration: none;
-  overflow-wrap: anywhere;
+  transition: background 0.2s;
 }
 
 .file-list a:hover {
-  text-decoration: underline;
+  background: rgba(224, 179, 60, 0.15);
+}
+
+.file-badge {
+  flex-shrink: 0;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: #b42318;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 600px) {
@@ -123,6 +153,7 @@
   }
 
   .modal-content {
-    padding: 24px 18px;
+    padding: 22px 14px;
+    max-height: 88vh;
   }
 }

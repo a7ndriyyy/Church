@@ -196,6 +196,11 @@
     gap: 16px;
   }
 
+  /* one column: every card full width (undo the tablet centring) */
+  .contact-card:last-child:nth-child(odd) {
+    width: 100%;
+  }
+
   .church-info {
     padding: 20px;
   }
