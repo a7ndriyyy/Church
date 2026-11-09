@@ -45,7 +45,8 @@
     "title": "Soutenir notre église",
     "text": "Votre don nous aide à préserver notre église, à assurer les offices et la vie de la communauté. Merci pour chaque contribution !",
     "donate": "Faire un don",
-    "comingSoon": "Les dons en ligne seront bientôt disponibles.",
+    "contactToDonate": "Pour faire un don à l'église, contactez l'une des personnes de notre page Contacts : le prêtre, le chef de la paroisse ou la cheffe de la confrérie. Elles vous expliqueront comment procéder.",
+    "seeContacts": "Voir les contacts",
     "secure": "Paiement sécurisé par carte via Stripe.",
     "soldiers": "Si vous souhaitez aider l'armée ukrainienne, nous collectons aussi des dons pour elle — pour cela, merci de"
   },

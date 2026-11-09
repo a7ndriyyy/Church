@@ -16,14 +16,21 @@ const Support = () => {
         <p className="donate-text">{t("support-page.text")}</p>
 
         {donationLink ? (
-          <a className="btn btn-gold donate-btn" href={donationLink} target="_blank" rel="noopener noreferrer">
-            {t("support-page.donate")}
-          </a>
+          <>
+            <a className="btn btn-gold donate-btn" href={donationLink} target="_blank" rel="noopener noreferrer">
+              {t("support-page.donate")}
+            </a>
+            <p className="donate-secure">{t("support-page.secure")}</p>
+          </>
         ) : (
-          <p className="donate-text">{t("support-page.comingSoon")}</p>
+          // No online payments yet: donations go through one of the parish contacts
+          <>
+            <p className="donate-text donate-contact">{t("support-page.contactToDonate")}</p>
+            <Link className="btn btn-gold donate-btn" to="/contacts">
+              {t("support-page.seeContacts")}
+            </Link>
+          </>
         )}
-
-        <p className="donate-secure">{t("support-page.secure")}</p>
       </section>
 
       <p className="soldiers-note">

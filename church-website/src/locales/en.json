@@ -42,7 +42,8 @@
     "title": "Support our church",
     "text": "Your donation helps preserve our church and keep services and community life going. Thank you for every gift!",
     "donate": "Donate",
-    "comingSoon": "Online donations will be available soon.",
+    "contactToDonate": "To make a donation to the church, please contact one of the people on our Contacts page: the priest, the parish head or the brotherhood head. They will explain how to give.",
+    "seeContacts": "See contacts",
     "secure": "Secure card payment via Stripe.",
     "soldiers": "If you would like to help the Ukrainian army, we also collect donations for it — for that, please"
   },
