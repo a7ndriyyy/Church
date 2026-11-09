@@ -49,7 +49,7 @@ export default function Home() {
       </section>
 
       <div className="verse-of-the-day">
-        <p>{verses[currentVerse]}</p>
+        <p key={currentVerse} className="verse-text">{verses[currentVerse]}</p>
         <button className="next-verse-btn" onClick={handleNextVerse}>
           {t("home-page.nextVerse")}
         </button>

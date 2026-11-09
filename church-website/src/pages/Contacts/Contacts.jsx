@@ -21,6 +21,8 @@ export default function Contacts() {
       name: t('nameBrotherHead'),
       phone: "+33 6 18 19 45 89",
       email: "natalia.nier@example.com",
+      photo: `${process.env.PUBLIC_URL}/images/natalia-nier.jpg`,
+      photoPosition: "center 32%",
     },
     {
       role: t('parishHead'),
@@ -68,7 +70,7 @@ export default function Contacts() {
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
             data-index={index}
-            style={{ transitionDelay: `${index * 0.2}s` }}
+            style={{ animationDelay: `${index * 0.15}s` }}
           >
             {person.photo ? (
               <div
