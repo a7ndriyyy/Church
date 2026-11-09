@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Church/static/css/main.998c0e1c.css",
-    "main.js": "/Church/static/js/main.c7200210.js",
+    "main.js": "/Church/static/js/main.8ca82340.js",
     "static/js/453.bacb0616.chunk.js": "/Church/static/js/453.bacb0616.chunk.js",
     "static/media/church-bg.jpg": "/Church/static/media/church-bg.26ff3013721931077ec6.jpg",
     "index.html": "/Church/index.html",
     "static/media/cross-pattern.svg": "/Church/static/media/cross-pattern.366c09ab01abdd854dca.svg",
     "main.998c0e1c.css.map": "/Church/static/css/main.998c0e1c.css.map",
-    "main.c7200210.js.map": "/Church/static/js/main.c7200210.js.map",
+    "main.8ca82340.js.map": "/Church/static/js/main.8ca82340.js.map",
     "453.bacb0616.chunk.js.map": "/Church/static/js/453.bacb0616.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.998c0e1c.css",
-    "static/js/main.c7200210.js"
+    "static/js/main.8ca82340.js"
   ]
 }
