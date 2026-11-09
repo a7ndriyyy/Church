@@ -24,6 +24,12 @@
   align-items: start;
 }
 
+/* let grid columns shrink below their inputs' built-in width */
+.admin-layout > *,
+.event-form-row > * {
+  min-width: 0;
+}
+
 .admin-panel {
   background: var(--paper);
   color: var(--ink);
@@ -55,11 +61,34 @@
 .admin-panel input,
 .admin-panel textarea {
   font: inherit;
+  /* 16px stops iPhones from zooming the page when a field is tapped */
+  font-size: 16px;
   font-weight: 400;
+  width: 100%;
+  min-width: 0;
   padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
+  color: var(--ink);
+}
+
+.admin-panel textarea {
+  resize: vertical;
+}
+
+/* iOS draws date fields with its own width and height; make them behave */
+.admin-panel input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  min-height: 46px;
+  text-align: left;
+}
+
+.admin-panel input[type="file"] {
+  font-size: 0.9rem;
+  padding: 8px;
 }
 
 .admin-panel input:focus,
@@ -156,5 +185,22 @@
   .event-form-row {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  .admin-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .event-form-actions .btn {
+    flex: 1;
+  }
+
+  .admin-event-list li {
+    flex-wrap: wrap;
+  }
+
+  .admin-event-info {
+    min-width: 0;
+    flex-basis: calc(100% - 70px);
   }
 }

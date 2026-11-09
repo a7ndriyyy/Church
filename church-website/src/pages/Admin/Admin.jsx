@@ -147,6 +147,7 @@ export default function Admin() {
   const [session, setSession] = useState(null);
   const [events, setEvents] = useState([]);
   const [editing, setEditing] = useState(emptyForm);
+  const [listError, setListError] = useState("");
 
   useEffect(() => {
     if (!supabase) return;
@@ -155,7 +156,13 @@ export default function Admin() {
     return () => data.subscription.unsubscribe();
   }, []);
 
-  const refresh = () => listEvents().then(setEvents);
+  const refresh = () =>
+    listEvents()
+      .then((list) => {
+        setEvents(list);
+        setListError("");
+      })
+      .catch((err) => setListError(err.message || String(err)));
 
   useEffect(() => {
     if (session) refresh();
@@ -182,7 +189,12 @@ export default function Admin() {
 
   const handleDelete = async (event) => {
     if (!window.confirm(t("admin.confirmDelete", { title: event.title }))) return;
-    await deleteEvent(event.id);
+    try {
+      await deleteEvent(event.id);
+    } catch (err) {
+      setListError(err.message || String(err));
+      return;
+    }
     if (editing.id === event.id) setEditing(emptyForm);
     refresh();
   };
@@ -208,7 +220,8 @@ export default function Admin() {
 
         <div className="admin-panel">
           <h2>{t("admin.allEvents")}</h2>
-          {events.length === 0 && <p>{t("home-page.noEvents")}</p>}
+          {listError && <p className="admin-error">{listError}</p>}
+          {!listError && events.length === 0 && <p>{t("home-page.noEvents")}</p>}
           <ul className="admin-event-list">
             {events.map((event) => (
               <li key={event.id}>
