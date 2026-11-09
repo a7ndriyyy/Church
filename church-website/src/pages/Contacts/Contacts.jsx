@@ -109,7 +109,7 @@ export default function Contacts() {
 
         <h3>{t('followUsTitle')}</h3>
         <div className="social-links">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+          <a href="https://www.facebook.com/groups/967927991360599/" target="_blank" rel="noreferrer">Facebook</a>
           <a href="https://www.instagram.com/eglise_orthodoxe_ukrainienne_?igsh=ZXk4N2J2Zmp6OGxm&utm_source=qr" target="_blank" rel="noreferrer">Instagram</a>
         </div>
 
